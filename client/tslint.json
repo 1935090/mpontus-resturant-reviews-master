@@ -1,0 +1,57 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rulesDirectory": ["node_modules/tslint-clean-code/dist/src"],
+  "rules": {
+    // Equivalent compiler option is too annoying
+    "no-unused-variable": [true, { "ignore-pattern": "^_" }],
+
+    // Allow bypassing unused parameters using underscore
+    "variable-name": [true, "allow-leading-underscore"],
+
+    // Enforce all documentation to maintain consistent flow
+    "completed-docs": [
+      true,
+      {
+        "classes": "all",
+        "methods": "all",
+        "properties": "all",
+        "interfaces": "all",
+        "types": "all",
+        "functions": {
+          "visibilities": "exported"
+        },
+        "variables": {
+          "visibilities": "exported"
+        }
+      }
+    ],
+
+    // Force those typedefs which enhance documentation
+    "typedef": [true, "property-declaration", "member-variable-declaration"],
+
+    // Prefixed interface names looks awkward for props
+    "interface-name": false,
+
+    // Allow sensible ordering of object parameters
+    "object-literal-sort-keys": false,
+
+    // Conflicts with stateless components
+    "variable-name": false,
+
+    // Conflicts with asset imports
+    "match-default-export-name": false,
+
+    // Conflicts with JSX
+    "id-length": false,
+
+    // Necessary for polyfills and CSS files
+    "no-import-side-effect": false,
+
+    // Too annoying with react
+    "no-void-expression": false,
+
+    // Lambdas performance implications are insignificant
+    "jsx-no-lambda": false
+  }
+}

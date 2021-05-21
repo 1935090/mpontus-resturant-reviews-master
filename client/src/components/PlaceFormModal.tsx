@@ -1,0 +1,146 @@
+import {
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Typography
+} from "@material-ui/core";
+import { DialogProps } from "@material-ui/core/Dialog";
+import React from "react";
+import * as yup from "yup";
+import { RequestError } from "../models/RequestError";
+import { SavePlaceDto } from "../models/SavePlaceDto";
+import { AdaptiveModal } from "./AdaptiveModal";
+import { Button } from "./Button";
+import { Field } from "./Field";
+import { Form } from "./Form";
+import { Input } from "./Input";
+
+/**
+ * Place Form Modal Props
+ */
+interface Props extends Pick<DialogProps, "open" | "onExited"> {
+  /**
+   * Auto focus on the first field
+   */
+  autoFocus?: boolean;
+
+  /**
+   * Modal Title
+   */
+  title: React.ReactNode;
+
+  /**
+   * Modal Subtitle
+   */
+  subtitle: React.ReactNode;
+
+  /**
+   * Submit button Label
+   */
+  submitLabel: React.ReactNode;
+
+  /**
+   * Form initial values
+   */
+  initialValues?: SavePlaceDto;
+
+  /**
+   * Whether request is in progress
+   */
+  loading?: boolean;
+
+  /**
+   * Form errors
+   */
+  error?: RequestError<SavePlaceDto>;
+
+  /**
+   * Callback invoked on successful form submission
+   */
+  onSubmit: (values: SavePlaceDto) => void;
+
+  /**
+   * Callback invoked on modal dismissal
+   */
+  onCancel: () => void;
+}
+
+/**
+ * Place form validation schema
+ */
+const validationSchema = yup.object<SavePlaceDto>().shape({
+  title: yup
+    .string()
+    .required()
+    .trim(),
+  address: yup
+    .string()
+    .required()
+    .trim()
+});
+
+/**
+ * Initial place form values
+ */
+const defaultValues = {
+  title: "",
+  address: ""
+};
+
+/**
+ * Place Form Modal
+ *
+ * Displays a dialog for creating or editing a place.
+ */
+export const PlaceFormModal: React.SFC<Props> = ({
+  open,
+  autoFocus,
+  loading,
+  error,
+  title,
+  subtitle,
+  submitLabel,
+  onSubmit,
+  onCancel,
+  onExited,
+  initialValues = defaultValues
+}) => (
+  <AdaptiveModal open={open} onExited={onExited} onClose={onCancel}>
+    <Form
+      onSubmit={onSubmit}
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      errors={error && error.details}
+      aria-labelledby="form-dialog-title"
+    >
+      <DialogTitle disableTypography={true}>
+        <Typography variant="h6" id="form-dialog-title">
+          {title}
+        </Typography>
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText>{subtitle}</DialogContentText>
+        <Field
+          component={Input}
+          autoFocus={autoFocus}
+          id="title"
+          name="title"
+          label="Restaurant Name"
+        />
+        <Field
+          component={Input}
+          id="address"
+          name="address"
+          label="Restaurant Address"
+        />
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onCancel}>Cancel</Button>
+        <Button type="submit" color="primary" loading={loading}>
+          {submitLabel}
+        </Button>
+      </DialogActions>
+    </Form>
+  </AdaptiveModal>
+);

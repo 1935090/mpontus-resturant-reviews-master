@@ -1,0 +1,490 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List place reviews when place does not exist should fail 1`] = `
+Object {
+  "error": "Not Found",
+  "statusCode": 404,
+}
+`;
+
+exports[`List place reviews when place exists should succeed 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "author": Object {
+        "name": "Hilma Johnson",
+      },
+      "comment": "Distinctio voluptas aliquid vitae et harum et voluptatem nostrum.",
+      "dateVisited": "2009-01-18",
+      "id": "5219c32e-d087-50c0-b177-7f208abf97cb",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Jackeline Ferry",
+      },
+      "comment": "Sed rerum officiis suscipit ut placeat saepe non repudiandae.",
+      "dateVisited": "2009-01-18",
+      "id": "f0ca6108-f9ba-52bd-a265-e8360c91f82e",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Diana Sipes",
+      },
+      "comment": "Optio natus tempore totam qui.",
+      "dateVisited": "1992-01-14",
+      "id": "d249e54b-5f99-5dd7-ab56-ed6815acf830",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Mrs. Arely Daniel",
+      },
+      "comment": "Vitae id aut.",
+      "dateVisited": "1992-01-14",
+      "id": "9e4d11a2-129c-595f-8ec9-d956abc5ebd1",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Alyson Prosacco",
+      },
+      "comment": "Temporibus molestiae enim sunt quos sint id.",
+      "dateVisited": "1992-01-14",
+      "id": "5d7dfb9e-7ca1-5743-bb72-e54f23abbcbd",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 3,
+    },
+    Object {
+      "author": Object {
+        "name": "Dr. Yazmin Spencer",
+      },
+      "comment": "Repudiandae eveniet ullam est.",
+      "dateVisited": "1992-01-14",
+      "id": "b29f9105-f8ac-52f9-aaa8-7b8258453db8",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Adaline Kreiger",
+      },
+      "comment": "Sed laborum quasi aperiam non unde quibusdam magni.",
+      "dateVisited": "1986-01-24",
+      "id": "8fcc3c67-bf2e-5ae1-98c5-a315ef4c0a44",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Kaden Rice",
+      },
+      "comment": "Sed magni aspernatur dolor.",
+      "dateVisited": "1986-01-24",
+      "id": "db055d7c-d715-5c13-8a02-13f665ddca8c",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Mr. Willis Prosacco",
+      },
+      "comment": "Debitis est illo aperiam voluptas.",
+      "dateVisited": "1986-01-24",
+      "id": "3211b3c8-2a5a-5e93-a9fb-2b0d2828d55e",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Mrs. Milan Towne",
+      },
+      "comment": "Et aut omnis et dignissimos.",
+      "dateVisited": "1986-01-24",
+      "id": "c177e416-17b7-5763-87b3-68e7aefed023",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 3,
+    },
+  ],
+  "total": 18,
+}
+`;
+
+exports[`List place reviews when place exists when limit is negative should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "min": "take must not be less than 0",
+      },
+      "property": "take",
+      "target": Object {
+        "skip": 0,
+        "take": -1,
+      },
+      "value": -1,
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`List place reviews when place exists when limit is not a number should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "max": "take must not be greater than 50",
+        "min": "take must not be less than 0",
+      },
+      "property": "take",
+      "target": Object {
+        "skip": 0,
+        "take": null,
+      },
+      "value": null,
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`List place reviews when place exists when limit is provided should succeed 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "author": Object {
+        "name": "Hilma Johnson",
+      },
+      "comment": "Distinctio voluptas aliquid vitae et harum et voluptatem nostrum.",
+      "dateVisited": "2009-01-18",
+      "id": "5219c32e-d087-50c0-b177-7f208abf97cb",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Jackeline Ferry",
+      },
+      "comment": "Sed rerum officiis suscipit ut placeat saepe non repudiandae.",
+      "dateVisited": "2009-01-18",
+      "id": "f0ca6108-f9ba-52bd-a265-e8360c91f82e",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+  ],
+  "total": 18,
+}
+`;
+
+exports[`List place reviews when place exists when limit is too large should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "max": "take must not be greater than 50",
+      },
+      "property": "take",
+      "target": Object {
+        "skip": 0,
+        "take": 9000,
+      },
+      "value": 9000,
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`List place reviews when place exists when offset is negative should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "min": "skip must not be less than 0",
+      },
+      "property": "skip",
+      "target": Object {
+        "skip": -1,
+        "take": 10,
+      },
+      "value": -1,
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`List place reviews when place exists when offset is not a number should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "min": "skip must not be less than 0",
+      },
+      "property": "skip",
+      "target": Object {
+        "skip": null,
+        "take": 10,
+      },
+      "value": null,
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`List place reviews when place exists when offset is provided should succeed 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "author": Object {
+        "name": "Mrs. Arely Daniel",
+      },
+      "comment": "Vitae id aut.",
+      "dateVisited": "1992-01-14",
+      "id": "9e4d11a2-129c-595f-8ec9-d956abc5ebd1",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Dr. Yazmin Spencer",
+      },
+      "comment": "Repudiandae eveniet ullam est.",
+      "dateVisited": "1992-01-14",
+      "id": "b29f9105-f8ac-52f9-aaa8-7b8258453db8",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Diana Sipes",
+      },
+      "comment": "Optio natus tempore totam qui.",
+      "dateVisited": "1992-01-14",
+      "id": "d249e54b-5f99-5dd7-ab56-ed6815acf830",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Kaden Rice",
+      },
+      "comment": "Sed magni aspernatur dolor.",
+      "dateVisited": "1986-01-24",
+      "id": "db055d7c-d715-5c13-8a02-13f665ddca8c",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Mr. Willis Prosacco",
+      },
+      "comment": "Debitis est illo aperiam voluptas.",
+      "dateVisited": "1986-01-24",
+      "id": "3211b3c8-2a5a-5e93-a9fb-2b0d2828d55e",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Mrs. Milan Towne",
+      },
+      "comment": "Et aut omnis et dignissimos.",
+      "dateVisited": "1986-01-24",
+      "id": "c177e416-17b7-5763-87b3-68e7aefed023",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 3,
+    },
+    Object {
+      "author": Object {
+        "name": "Adaline Kreiger",
+      },
+      "comment": "Sed laborum quasi aperiam non unde quibusdam magni.",
+      "dateVisited": "1986-01-24",
+      "id": "8fcc3c67-bf2e-5ae1-98c5-a315ef4c0a44",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Arthur Cole",
+      },
+      "comment": "Animi ducimus molestiae est hic enim cum ex voluptatem.",
+      "dateVisited": "1985-06-05",
+      "id": "da8b455e-b396-5957-9c77-f0bc0c7f2687",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 2,
+    },
+    Object {
+      "author": Object {
+        "name": "Rebekah Wisoky",
+      },
+      "comment": "Quia qui provident et ut voluptas.",
+      "dateVisited": "1985-06-05",
+      "id": "ebc2b9a3-8fa2-552a-a82a-14bfc766f48b",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+    Object {
+      "author": Object {
+        "name": "Aidan Leffler",
+      },
+      "comment": "Enim asperiores nam vel occaecati vero.",
+      "dateVisited": "1985-06-05",
+      "id": "520f3237-c60f-55ba-82d0-5098c68a7c55",
+      "place": Object {
+        "address": "261 Alexandre Forks",
+        "id": "99ea5b8b-c27d-5560-a6a3-35f23fd8e83d",
+        "rating": 0,
+        "reviewCount": 0,
+        "title": "The Exhibit",
+      },
+      "rating": 4,
+    },
+  ],
+  "total": 18,
+}
+`;

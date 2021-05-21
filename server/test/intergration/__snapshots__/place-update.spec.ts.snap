@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Update place when address is empty should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "isNotEmpty": "address should not be empty",
+      },
+      "property": "address",
+      "target": Object {
+        "address": "",
+      },
+      "value": "",
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`Update place when title is empty should fail 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    Object {
+      "children": Array [],
+      "constraints": Object {
+        "isNotEmpty": "title should not be empty",
+      },
+      "property": "title",
+      "target": Object {
+        "title": "",
+      },
+      "value": "",
+    },
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`Update place when user is admin should succeed 1`] = `
+Object {
+  "address": "069 Murphy Union",
+  "canDelete": true,
+  "canEdit": true,
+  "canReview": true,
+  "id": "8242a55b-5a9d-5ca9-b296-eed08dcf2897",
+  "rating": 4.99,
+  "reviewCount": 0,
+  "title": "Amigos",
+}
+`;
+
+exports[`Update place when user is admin when place does not exist should fail 1`] = `
+Object {
+  "error": "Not Found",
+  "statusCode": 404,
+}
+`;
+
+exports[`Update place when user is owner when place belongs to the user should succeed 1`] = `
+Object {
+  "address": "069 Murphy Union",
+  "bestReview": Object {
+    "author": Object {
+      "name": "Trenton Kessler",
+    },
+    "comment": "Field return long bed after.",
+    "dateVisited": "2012-05-22",
+    "id": "d8320717-05e2-5fd0-83ee-0c36d13b55e1",
+    "rating": 4,
+    "reply": "Party environment control quality full less painting.",
+  },
+  "canDelete": true,
+  "canEdit": true,
+  "id": "05bd7b00-f274-5b91-9c48-08bfa24cb9bd",
+  "rating": 0,
+  "reviewCount": 0,
+  "title": "Nicolas - Satterfield",
+  "worstReview": Object {
+    "author": Object {
+      "name": "Christina Friesen",
+    },
+    "canReply": true,
+    "comment": "Serious inside else memory if six.",
+    "dateVisited": "1986-01-24",
+    "id": "93aa6df2-8c47-54b1-8445-4152fe33ab41",
+    "rating": 1,
+  },
+}
+`;
+
+exports[`Update place when user is owner when place does not belong to the user should fail 1`] = `
+Object {
+  "error": "Forbidden",
+  "statusCode": 403,
+}
+`;

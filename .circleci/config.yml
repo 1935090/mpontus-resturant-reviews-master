@@ -1,0 +1,121 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8
+
+server_defaults: &server_defaults
+  <<: *defaults
+  working_directory: ~/repo/server
+
+client_defaults: &client_defaults
+  <<: *defaults
+  working_directory: ~/repo/client
+
+version: 2
+jobs:
+  checkout_code:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+            - node-modules-{{ arch }}-{{ .Branch }}
+            - node-modules
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+            - server/node_modules
+            - client/node_modules
+          key: node-modules-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  lint_server:
+    <<: *server_defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Lint
+          command: yarn lint
+          
+  build_server:
+    <<: *server_defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build
+          command: yarn build
+
+  test_server:
+    <<: *server_defaults
+    docker:
+      - image: circleci/node:8.11
+        environment:
+          JWT_SECRET: secret
+          DATABASE_URL: postgresql://root@localhost/circle_test
+          REDIS_URL: redis://localhost
+      - image: circleci/postgres:9.6.5-alpine-ram
+      - image: circleci/redis:5.0.1-alpine
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Run E2E tests
+          command: yarn test:e2e --coverage
+      - run:
+          name: Upload test coverage
+          command: npx codecov -p ~/repo
+
+  lint_client:
+    <<: *client_defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Lint
+          command: yarn lint
+
+  build_client:
+    <<: *client_defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - checkout_code
+      - build_server:
+          requires:
+            - checkout_code
+      - lint_server:
+          requires:
+            - checkout_code
+      - test_server:
+          requires:
+            - checkout_code
+      - build_client:
+          requires:
+            - checkout_code
+      - lint_client:
+          requires:
+            - checkout_code
